@@ -12,3 +12,9 @@ export const Row = styled.div`
   flex-direction: row;
 `
 
+export const Center = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
