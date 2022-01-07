@@ -1,4 +1,6 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import store from 'store'
+import { Provider } from "react-redux"
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -18,10 +20,12 @@ const theme = {
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <GlobalStyle />
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <Provider store={store}>
+        <GlobalStyle />
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </Provider>
     </>
   )
 }
